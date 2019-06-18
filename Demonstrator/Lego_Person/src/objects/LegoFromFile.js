@@ -1,3 +1,5 @@
+// Legomännchen Import
+
 LegoFromFile = function () {
 
     console.log('LegoFromFile')
@@ -6,7 +8,7 @@ LegoFromFile = function () {
 
     var fbxLoader = new THREE.FBXLoader();
 
-    fbxLoader.load('src/models/Lego1/Lego_v0.2.fbx', function (object) {
+    fbxLoader.load('src/models/Lego2/Lego_v0.3.fbx', function (object) {
 
         console.log('LegoFromFile-fbxLoader');
 

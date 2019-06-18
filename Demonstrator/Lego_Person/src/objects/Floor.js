@@ -1,3 +1,5 @@
+// Der Fußboden
+
 Floor = function (dimX, dimY) {
 
     var floorGeometry = new THREE.PlaneGeometry(dimX, dimY);
