@@ -15,19 +15,32 @@ document.write('<script type="text/javascript" src="src/objects/Lights.js"></scr
 document.write('<script type="text/javascript" src="src/objects/LegoFromFile.js"></script>');
 
 const DEG_TO_RAD = Math.PI / 180;
-
+/*
+const measureX = 13;
+const measureY = 47;
+const measureZ =  13;
+*/
 function main () {
 
     scene = new THREE.Scene();
 
     var axes = new THREE.AxesHelper(20);
     scene.add(axes);
-
+/*
+    //Measure
+    var boxgeometry = new THREE.BoxGeometry(measureX, measureY, measureZ);
+    var boxMaterial = new THREE.MeshLambertMaterial({color:0xffff00});
+    var box = new THREE.Mesh(boxgeometry, boxMaterial);
+    box.rotation.set(0.17, 0, 0);
+    box.position.set(-163, measureY/2, 9);
+    scene.add(box);
+*/
+    //ADD Build-Lego
     var person = new Person();
-    person.position.set(50, 0, 0);
-
+    person.position.set(113.75, 0, 0);
     scene.add(person);
 
+    //ADD finished Model
     var legoFigure = new LegoFromFile();
     legoFigure.position.set(-50, 0, 0);
     scene.add(legoFigure);
