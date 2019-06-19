@@ -28,15 +28,15 @@ function main () {
 /*
     var axes = new THREE.AxesHelper(250);
     scene.add(axes);
-
+*/
     var person = new Person();
-    person.position.set(50, 0, 0);
+    person.position.set(100, 0, 0);
 
     scene.add(person);
-*/
+
 
     var legoFigure = new LegoFromFile();
-    legoFigure.position.set(-50, 0, 0);
+    legoFigure.position.set(-100, 0, 0);
     scene.add(legoFigure);
 
     scene.add(new Floor(500, 500));
