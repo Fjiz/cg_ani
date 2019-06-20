@@ -12,10 +12,13 @@ LegoFromFile = function () {
 
         console.log('LegoFromFile-fbxLoader');
 
+        object.traverse( function(child){
+            if(child.name === "Head" || child.name === "Corpus" || child.name === "Corpus001" || child.name === "Corpus002"){
+                child.castShadow = true;
+            }
+        })
+
         Lego_Figure.add(object);
-
-
-
     });
 
     return Lego_Figure;

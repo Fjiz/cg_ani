@@ -30,10 +30,8 @@ function main () {
     scene.add(axes);
 */
     var person = new Person();
-    person.position.set(100, 0, 0);
-
+    person.position.set(50, 0, 0);
     scene.add(person);
-
 
     var legoFigure = new LegoFromFile();
     legoFigure.position.set(-100, 0, 0);
@@ -41,19 +39,20 @@ function main () {
 
     scene.add(new Floor(500, 500));
 
+    var Light = new Lights();
     var ambientLight = new Lights();
     scene.add(ambientLight.createAmbientLight());
 
-    var Light = new Lights();
-    var directionalLight = Light.createDirectionalLight(-30, 200, 100);
+    var directionalLight = Light.createDirectionalLight(0, 250, 150);
     scene.add(directionalLight);
 
     // GUI mit OrbitControls De-/Aktivierung für Testzwecke
-/*
+    // GUI für das Licht (Shadow purpose)
+
     var gui = new dat.GUI()
-    gui.add(legoFigure.position, "x", -250,250).onChange(function(e) {legoFigure.position.x = e;});
-    gui.add(legoFigure.position, "y", -250,250).onChange(function(e) {legoFigure.position.y = e;});
-    gui.add(legoFigure.position, "z", -250,250).onChange(function(e) {legoFigure.position.z = e;});
+    gui.add(directionalLight.position, "x", -250,250).onChange(function(e) {directionalLight.position.x = e;});
+    gui.add(directionalLight.position, "y", -250,250).onChange(function(e) {directionalLight.position.y = e;});
+    gui.add(directionalLight.position, "z", -250,250).onChange(function(e) {directionalLight.position.z = e;});
 
     gui.domElement.onmouseenter = function() {
         orbitControls.enabled = false;
@@ -62,7 +61,7 @@ function main () {
     gui.domElement.onmouseleave = function() {
         orbitControls.enabled = true;
     }
-*/
+
 // ohne var für global Zugriff
     
     camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -78,6 +77,8 @@ function main () {
     renderer = new THREE.WebGLRenderer({antialias:true}); //K: Antialias angemacht
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(new THREE.Color(0xffffff));
+    renderer.shadowMap.enabled = true;
+
 
     document.getElementById('3d_content').appendChild(renderer.domElement);
 
