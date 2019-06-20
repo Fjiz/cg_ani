@@ -2,6 +2,15 @@
 
 We build a Lego figure out of native geometry, inspired by a Lego-fbx-Model.
 
+# Anforderungen "Zwillings-Demonstrator" 
+- [x] Struktur/Aufbau
+- [ ] Animation(en)
+- [ ] Material(ien)
+- [ ] Textur(en)
+- [ ] Physik
+- [ ] Sound(s)
+- [x] Schatten
+
 ## Getting Started
 
 You only need to download/clone this Project and open it in a browser. The libraries needed for this Project are already added to the repository.
