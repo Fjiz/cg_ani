@@ -14,6 +14,7 @@ document.write('<script type="text/javascript" src="src/objects/Lego.js"></scrip
 document.write('<script type="text/javascript" src="src/objects/Floor.js"></script>');
 document.write('<script type="text/javascript" src="src/objects/Lights.js"></script>');
 document.write('<script type="text/javascript" src="src/objects/LegoFromFile.js"></script>');
+document.write('<script type="text/javascript" src="src/animation/Animation.js"></script>');
 
 //Events
 document.write('<script type="text/javascript" src="src/eventfunctions/resizeWindow.js"></script>');
@@ -86,6 +87,8 @@ function main () {
     function mainLoop () {
 
         var delta = clock.getDelta();
+
+        headAnimation.update(delta);
 
         if (legoAnimationMixer != null)
             legoAnimationMixer.update(delta);

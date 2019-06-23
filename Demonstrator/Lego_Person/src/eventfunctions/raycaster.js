@@ -12,6 +12,12 @@ function executeRaycast(event) {
 
         // hier können über die Property.name Dinge passieren -> Folien 5 Seite 11
         console.log(firstHit.name)
+
+        if (firstHit.name === "headTEST"){
+            console.log("its moving");
+            firstHit.userData.toggleAnimationEndPosition();
+        }
+
         if (firstHit.name === "Head") {
             if (!legoAnimationMixer.existingAction("HeadAction").isRunning()) {
                 legoAnimationMixer.existingAction("HeadAction").stop();

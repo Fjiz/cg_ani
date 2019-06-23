@@ -6,7 +6,7 @@ Person = function () {
     var personGroup = new THREE.Group();
 
     //Materials
-    var skinMaterial = new THREE.MeshLambertMaterial({color:0xFFD700});
+    var skinMaterial = new THREE.MeshPhongMaterial({color:0xCCBD22}, {specular:0xFFFF00});
     var topMaterial = new THREE.MeshLambertMaterial({color:0x6969FF});
     var bottomMaterial = new THREE.MeshLambertMaterial({color:0x696969});
 
@@ -22,10 +22,13 @@ Person = function () {
     headGroup.add(hair);
 
     //FACE
+    var faceTexture = new THREE.MeshPhongMaterial({color:0xCCBD22}, {specular:0xFFFF00});
+    faceTexture.map = new THREE.TextureLoader().load('src/images/lego_face2.png');
     var headGeometry = new THREE.SphereGeometry(30, 32, 3);
-    var head = new THREE.Mesh(headGeometry, skinMaterial);
+    var head = new THREE.Mesh(headGeometry, faceTexture);
     head.castShadow = true;
     head.position.set(0, 171.25, 0);
+    head.name = "headTEST"
     headGroup.add(head);
 
     //NECK
@@ -103,13 +106,13 @@ Person = function () {
     rightArm.add(armR);
 
     //WRIST_L
+    var wristGeometry = new THREE.CylinderGeometry(7, 7, 9, 32, 1, false);
     var wristL = new THREE.Mesh(wristGeometry, skinMaterial);
     wristL.position.set(39, 86, 1);
     wristL.castShadow =true;
     leftArm.add(wristL);
 
     //WRIST_R
-    var wristGeometry = new THREE.CylinderGeometry(7, 7, 9, 32, 1, false);
     var wristR = new THREE.Mesh(wristGeometry, skinMaterial);
     wristR.position.set(-39, 86, 1);
     wristR.castShadow = true;
@@ -210,6 +213,11 @@ Person = function () {
     personGroup.add(headGroup);
     personGroup.add(bodyGroup);
     personGroup.add(bottomGroup);
+
+    headAnimation = new AnimationU(head, AnimationType.ROTATION, AnimationAxis.Y)
+    headAnimation.setAmount(1080 * DEG_TO_RAD);
+    headAnimation.setSpeed(360 * DEG_TO_RAD);
+    head.userData = headAnimation;
 
     return personGroup;
 }
