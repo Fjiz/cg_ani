@@ -8,17 +8,37 @@ LegoFromFile = function () {
 
     var fbxLoader = new THREE.FBXLoader();
 
-    fbxLoader.load('src/models/Lego2/Lego_v0.3.fbx', function (object) {
+    legoAnimationMixer = null;
+
+    fbxLoader.load('src/models/Lego2/Lego_v0.5.fbx', function (object) {
 
         console.log('LegoFromFile-fbxLoader');
+        Lego_Figure.add(object);
 
+//        Ausgabe der Animationsnamen
+        for (var i = 0; i < object.animations.length; i++) {
+            console.log(object.animations[i].name);
+        }
+
+        // Shadow für alle Meshes an
         object.traverse( function(child){
-            if(child.name === "Head" || child.name === "Corpus" || child.name === "Corpus001" || child.name === "Corpus002"){
+            console.log(child.name)
+            if(child.name === "Head" || child.name === "Corpus" || child.name === "leftArm" || child.name === "rightArm"){
                 child.castShadow = true;
             }
         })
 
-        Lego_Figure.add(object);
+
+        // Animationen laden
+        // ohne var für global Zugriff
+        legoAnimationMixer = new THREE.AnimationMixer(object);
+
+        for (var i = 0; i < object.animations.length; i++) {
+            var action = legoAnimationMixer.clipAction(object.animations[i]);
+            action.clampWhenFinished = true;
+            action.setLoop(THREE.LoopOnce);
+        }
+
     });
 
     return Lego_Figure;

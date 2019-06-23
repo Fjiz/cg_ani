@@ -79,10 +79,17 @@ function main () {
     renderer.setClearColor(new THREE.Color(0xffffff));
     renderer.shadowMap.enabled = true;
 
-
     document.getElementById('3d_content').appendChild(renderer.domElement);
 
+    var clock = new THREE.Clock();
+
     function mainLoop () {
+
+        var delta = clock.getDelta();
+
+        if (legoAnimationMixer != null)
+            legoAnimationMixer.update(delta);
+
         renderer.render(scene, camera);
         requestAnimationFrame(mainLoop);
     }

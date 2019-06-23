@@ -11,6 +11,12 @@ function executeRaycast(event) {
         var firstHit = intersects[0].object;
 
         // hier können über die Property.name Dinge passieren -> Folien 5 Seite 11
-            console.log(firstHit)
+        console.log(firstHit.name)
+        if (firstHit.name === "Head") {
+            if (!legoAnimationMixer.existingAction("HeadAction").isRunning()) {
+                legoAnimationMixer.existingAction("HeadAction").stop();
+                legoAnimationMixer.existingAction("HeadAction").play();
+            }
+        }
     }
 }
