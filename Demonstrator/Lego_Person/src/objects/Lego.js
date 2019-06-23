@@ -22,8 +22,8 @@ Person = function () {
     headGroup.add(hair);
 
     //FACE
-    var faceTexture = new THREE.MeshPhongMaterial({color:0xCCBD22}, {specular:0xFFFF00});
-    faceTexture.map = new THREE.TextureLoader().load('src/images/lego_face2.png');
+    var faceTexture = new THREE.MeshPhongMaterial({color:0xCCBD22});
+    faceTexture.map = new THREE.TextureLoader().load('src/images/lego_face.png');
     var headGeometry = new THREE.SphereGeometry(30, 32, 3);
     var head = new THREE.Mesh(headGeometry, faceTexture);
     head.castShadow = true;

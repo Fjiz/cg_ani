@@ -15,30 +15,41 @@ document.write('<script type="text/javascript" src="src/objects/Floor.js"></scri
 document.write('<script type="text/javascript" src="src/objects/Lights.js"></script>');
 document.write('<script type="text/javascript" src="src/objects/LegoFromFile.js"></script>');
 document.write('<script type="text/javascript" src="src/animation/Animation.js"></script>');
+document.write('<script type="text/javascript" src="src/physics/Physics.js"></script>');
 
 //Events
 document.write('<script type="text/javascript" src="src/eventfunctions/resizeWindow.js"></script>');
 document.write('<script type="text/javascript" src="src/eventfunctions/calculateMousePosition.js"></script>');
 document.write('<script type="text/javascript" src="src/eventfunctions/raycaster.js"></script>');
+document.write('<script type="text/javascript" src="src/eventfunctions/executeKeyAction.js"></script>');
 
 const DEG_TO_RAD = Math.PI / 180;
 
 function main () {
 // ohne var für global Zugriff
     scene = new THREE.Scene();
+
+
+    physics = new Physics();
+    physics.initialize(0, -200, 0, 1 / 120, true);
+    physicsVisualDebugger = new THREE.CannonDebugRenderer(scene, physics.getWorld());
 /*
     var axes = new THREE.AxesHelper(250);
     scene.add(axes);
 */
     var person = new Person();
-    person.position.set(50, 0, 0);
+    person.position.set(85, 0, 20);
+    physics.addBox(person, 3,75,144, 35, 0,72,0)
+//    physics.addSphere(person, 3, 28, 0, 175, 0)
     scene.add(person);
 
     var legoFigure = new LegoFromFile();
-    legoFigure.position.set(-100, 0, 0);
+    legoFigure.position.set(-85, 0, 20);
+    physics.addBox(legoFigure, 3,75,144, 35, 0,72,0)
+//    physics.addSphere(legoFigure, 3, 28, 0, 175, 0)
     scene.add(legoFigure);
 
-    scene.add(new Floor(500, 500));
+    scene.add(new Floor(350, 350, 4));
 
     var Light = new Lights();
     var ambientLight = new Lights();
@@ -77,7 +88,7 @@ function main () {
 
     renderer = new THREE.WebGLRenderer({antialias:true}); //K: Antialias angemacht
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(new THREE.Color(0xffffff));
+    renderer.setClearColor(new THREE.Color(0x000000));
     renderer.shadowMap.enabled = true;
 
     document.getElementById('3d_content').appendChild(renderer.domElement);
@@ -88,6 +99,8 @@ function main () {
 
         var delta = clock.getDelta();
 
+        physics.update(delta);
+        physicsVisualDebugger.update();
         headAnimation.update(delta);
 
         if (legoAnimationMixer != null)
@@ -102,6 +115,8 @@ function main () {
     window.onresize = resizeWindow;
     window.onmousemove = calculateMousePosition;
     window.onclick = executeRaycast;
+    window.onkeydown = keyDownAction;
+    window.onkeyup = keyUpAction;
 }
 
 window.onload = main;
