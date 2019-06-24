@@ -86,23 +86,6 @@ Physics = function () {
         addPair(visualObject, body);
     }
 
-    this.addSphere = function   (visualObject, mass, radius,
-                                 offsetX = 0, offsetY = 0, offsetZ = 0,
-                                 eulerX = 0, eulerY = 0, eulerZ = 0) {
-
-        var translation = new CANNON.Vec3(offsetX, offsetY, offsetZ);
-        var rotation = new CANNON.Quaternion();
-        rotation.setFromEuler(eulerX, eulerY, eulerZ, "XYZ");
-
-        var body = new CANNON.Body({mass: mass});
-        body.addShape(new CANNON.Sphere(radius), translation, rotation);
-
-        body.position.copy(visualObject.position);
-        body.quaternion.copy(visualObject.quaternion);
-        world.addBody(body);
-        addPair(visualObject, body);
-    }
-
     this.addSphereWithVelocity = function (visualObject, mass, radius, velocityVector) {
         var body = new CANNON.Body({
             shape: new CANNON.Sphere(radius),

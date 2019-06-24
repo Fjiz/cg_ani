@@ -15,11 +15,19 @@ Person = function () {
     var headGroup = new THREE.Group();
 
     //HAIR
-    var hairGemoetry = new THREE.CylinderGeometry(11.5, 11.5, 9, 32, 1, false);
+    var hairGemoetry = new THREE.CylinderGeometry(11.5, 11.5, 10, 32, 1, false);
     var hair = new THREE.Mesh(hairGemoetry, skinMaterial);
-    hair.position.set(0, 197, 0);
+    hair.position.set(0, 198, 0);
     hair.castShadow = true;
-    headGroup.add(hair);
+
+    //HAIR-Cut-Out
+    var cutOutGeometry = new THREE.CylinderGeometry(9, 9, 10, 32, 1, false);
+    var cutOut = new THREE.Mesh(cutOutGeometry);
+    cutOut.position.set(0, 199, 0);
+
+    var subtract = threecsg.subtract(hair, cutOut, skinMaterial);
+    headGroup.add(subtract);
+
 
     //FACE
     var faceTexture = new THREE.MeshPhongMaterial({color:0xCCBD22});

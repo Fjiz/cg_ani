@@ -6,9 +6,9 @@ function keyDownAction(event) {
             if (!spaceDown) {
                 spaceDown = true;
 
-                // Throw a ball
+                // Throw a Lego
                 var ballRadius = 5;
-                var ballGeometry = new THREE.SphereGeometry(ballRadius, 16, 16);
+                var ballGeometry = new THREE.BoxGeometry(ballRadius*2, 10, 10);
                 var ball = new THREE.Mesh(ballGeometry, new THREE.MeshLambertMaterial({
                     color: 0x00FFFF
                 }));
