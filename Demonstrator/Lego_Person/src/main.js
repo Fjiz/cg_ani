@@ -18,12 +18,15 @@ document.write('<script type="text/javascript" src="src/objects/Lights.js"></scr
 document.write('<script type="text/javascript" src="src/objects/LegoFromFile.js"></script>');
 document.write('<script type="text/javascript" src="src/animation/Animation.js"></script>');
 document.write('<script type="text/javascript" src="src/physics/Physics.js"></script>');
+document.write('<script type="text/javascript" src="src/sound/Sound.js"></script>');
 
 //Events
 document.write('<script type="text/javascript" src="src/eventfunctions/resizeWindow.js"></script>');
 document.write('<script type="text/javascript" src="src/eventfunctions/calculateMousePosition.js"></script>');
 document.write('<script type="text/javascript" src="src/eventfunctions/raycaster.js"></script>');
 document.write('<script type="text/javascript" src="src/eventfunctions/executeKeyAction.js"></script>');
+document.write('<script type="text/javascript" src="src/eventfunctions/setSound.js"></script>');
+document.write('<script type="text/javascript" src="src/eventfunctions/setSoundLegend.js"></script>');
 
 const DEG_TO_RAD = Math.PI / 180;
 
@@ -31,33 +34,23 @@ function main () {
 // ohne var für global Zugriff
     scene = new THREE.Scene();
 
-
     physics = new Physics();
     physics.initialize(0, -200, 0, 1/60, true);
     physicsVisualDebugger = new THREE.CannonDebugRenderer(scene, physics.getWorld());
-/*
-    var axes = new THREE.AxesHelper(250);
-    scene.add(axes);
-*/
+
+    sound = new Sound();
 
     var person = new Person();
-    person.position.set(85, 0, 20);
-    physics.addBox(person, 3,75,144, 35, 0,72,0)
-//    physics.addSphere(person, 3, 28, 0, 175, 0)
+    person.position.set(85, 103, 20);
+    physics.addBox(person, 3,75, 146, 35, 0, -30,0);
+//    physics.addBox(person, 3, 50, 56, 35, 0, 60 , 0);
     scene.add(person);
 
     var legoFigure = new LegoFromFile();
     legoFigure.position.set(-85, 0, 20);
-    physics.addBox(legoFigure, 3,75,144, 35, 0,72,0)
+    //physics.addBox(legoFigure, 3,75,103, 35, 0,72,0)
 //    physics.addSphere(legoFigure, 3, 28, 0, 175, 0)
     scene.add(legoFigure);
-
-    var boxGeo = new THREE.BoxGeometry(30, 50, 10);
-    var boxMaterial = new THREE.MeshLambertMaterial({color:0x696969});
-    var box = new THREE.Mesh(boxGeo, boxMaterial);
-    box.position.set(0, 25, 30);
-    physics.addBox(box, 3, 30, 50, 10, 0, 0, 0);
-    scene.add(box);
 
     scene.add(new Floor(350, 350, 4));
 
@@ -89,6 +82,12 @@ function main () {
     camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(0, 180, 250);
     camera.lookAt(0, 0, 0);
+    camera.add(sound.getAudioListener());
+    sound.addSound(camera, "src/sound/files/awesome.mp3", 5, true);
+
+    cameraMusic = {
+        background: false
+    };
 
     var orbitControls = new THREE.OrbitControls(camera);
     orbitControls.target = new THREE.Vector3(0, 0, 0);
@@ -127,6 +126,12 @@ function main () {
     window.onclick = executeRaycast;
     window.onkeydown = keyDownAction;
     window.onkeyup = keyUpAction;
+
+    window.addEventListener('cameraMusic', setSound);
+    window.dispatchEvent(new Event('cameraMusic'));
+
+    window.addEventListener('legoPrimitive', setSoundLegend);
+    window.dispatchEvent(new Event('legoPrimitive'));
 }
 
 window.onload = main;
