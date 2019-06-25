@@ -8,6 +8,8 @@ document.write('<script type="text/javascript" src="../lib/three.js-r103/example
 document.write('<script type="text/javascript" src="../lib/three.js-r103/examples/js/loaders/FBXLoader_r90.js"></script>');
 document.write('<script type="text/javascript" src="../lib/cannon.js-0.6.2/build/cannon.js"></script>');
 document.write('<script type="text/javascript" src="../lib/cannon.js-0.6.2/tools/threejs/CannonDebugRenderer.js"></script>');
+document.write('<script type="text/javascript" src="../lib/ThreeCSG-1/three-csg.js"></script>');
+
 
 //Module
 document.write('<script type="text/javascript" src="src/objects/Lego.js"></script>');
@@ -33,7 +35,7 @@ function main () {
 
 
     physics = new Physics();
-    physics.initialize(0, -200, 0, 1 / 120, true);
+    physics.initialize(0, -200, 0, 1/60, true);
     physicsVisualDebugger = new THREE.CannonDebugRenderer(scene, physics.getWorld());
 
     var bowl = new BowlFromFile();
@@ -44,6 +46,7 @@ function main () {
     var axes = new THREE.AxesHelper(250);
     scene.add(axes);
 */
+
     var person = new Person();
     person.position.set(85, 0, 20);
     physics.addBox(person, 3,70,144, 35, 0,72,0)
@@ -55,6 +58,13 @@ function main () {
     physics.addBox(legoFigure, 3,70,144, 35, 0,72,0)
 //    physics.addSphere(legoFigure, 3, 28, 0, 175, 0)
     scene.add(legoFigure);
+
+    var boxGeo = new THREE.BoxGeometry(30, 50, 10);
+    var boxMaterial = new THREE.MeshLambertMaterial({color:0x696969});
+    var box = new THREE.Mesh(boxGeo, boxMaterial);
+    box.position.set(0, 25, 30);
+    physics.addBox(box, 3, 30, 50, 10, 0, 0, 0);
+    scene.add(box);
 
     scene.add(new Floor(350, 350, 4));
 
