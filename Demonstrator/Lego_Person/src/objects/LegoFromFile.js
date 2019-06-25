@@ -28,7 +28,6 @@ LegoFromFile = function () {
             }
         })
 
-
         // Animationen laden
         // ohne var für global Zugriff
         legoAnimationMixer = new THREE.AnimationMixer(object);
@@ -38,8 +37,11 @@ LegoFromFile = function () {
             action.clampWhenFinished = true;
             action.setLoop(THREE.LoopOnce);
         }
-
     });
+
+    legoFBX = {
+        head: false
+    }
 
     return Lego_Figure;
 }

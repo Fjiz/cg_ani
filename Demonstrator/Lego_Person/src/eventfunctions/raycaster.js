@@ -16,6 +16,8 @@ function executeRaycast(event) {
         if (firstHit.name === "headTEST"){
             console.log("its moving");
             firstHit.userData.toggleAnimationEndPosition();
+            legoPrimitive.head = !legoPrimitive.head;
+            window.dispatchEvent(new Event("legoPrimitive"));
         }
 
         if (firstHit.name === "Head") {
