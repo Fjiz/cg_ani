@@ -17,6 +17,8 @@ document.write('<script type="text/javascript" src="src/objects/LegoFromFile.js"
 document.write('<script type="text/javascript" src="src/animation/Animation.js"></script>');
 document.write('<script type="text/javascript" src="src/physics/Physics.js"></script>');
 
+document.write('<script type="text/javascript" src="src/objects/BowlFromFile.js"></script>');
+
 //Events
 document.write('<script type="text/javascript" src="src/eventfunctions/resizeWindow.js"></script>');
 document.write('<script type="text/javascript" src="src/eventfunctions/calculateMousePosition.js"></script>');
@@ -33,19 +35,24 @@ function main () {
     physics = new Physics();
     physics.initialize(0, -200, 0, 1 / 120, true);
     physicsVisualDebugger = new THREE.CannonDebugRenderer(scene, physics.getWorld());
+
+    var bowl = new BowlFromFile();
+    bowl.position.set(0, 0, -15);
+    physics.addCylinder(bowl, 3, 20, 11, 13, 32, 0, 13 / 2, 0, -90 * DEG_TO_RAD, 0, 0);
+    scene.add(bowl);
 /*
     var axes = new THREE.AxesHelper(250);
     scene.add(axes);
 */
     var person = new Person();
     person.position.set(85, 0, 20);
-    physics.addBox(person, 3,75,144, 35, 0,72,0)
+    physics.addBox(person, 3,70,144, 35, 0,72,0)
 //    physics.addSphere(person, 3, 28, 0, 175, 0)
     scene.add(person);
 
     var legoFigure = new LegoFromFile();
     legoFigure.position.set(-85, 0, 20);
-    physics.addBox(legoFigure, 3,75,144, 35, 0,72,0)
+    physics.addBox(legoFigure, 3,70,144, 35, 0,72,0)
 //    physics.addSphere(legoFigure, 3, 28, 0, 175, 0)
     scene.add(legoFigure);
 
