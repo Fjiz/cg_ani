@@ -36,7 +36,7 @@ function main () {
 
     physics = new Physics();
     physics.initialize(0, -200, 0, 1/120, true);
-    physicsVisualDebugger = new THREE.CannonDebugRenderer(scene, physics.getWorld());
+//    physicsVisualDebugger = new THREE.CannonDebugRenderer(scene, physics.getWorld());
 
     sound = new Sound();
 
@@ -109,7 +109,7 @@ function main () {
         var delta = clock.getDelta();
 
         physics.update(delta);
-        physicsVisualDebugger.update();
+//        physicsVisualDebugger.update();
         headAnimation.update(delta);
 
         if (legoAnimationMixer != null)

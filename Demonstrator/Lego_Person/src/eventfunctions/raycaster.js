@@ -11,7 +11,7 @@ function executeRaycast(event) {
         var firstHit = intersects[0].object;
 
         // hier können über die Property.name Dinge passieren -> Folien 5 Seite 11
-        console.log(firstHit.name)
+        //console.log(firstHit.name);
 
         if (firstHit.name === "head_person"){
             console.log("its moving");

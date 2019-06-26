@@ -2,8 +2,6 @@
 
 LegoFromFile = function () {
 
-    console.log('LegoFromFile');
-
     var Lego_Figure = new THREE.Group();
 
     var fbxLoader = new THREE.FBXLoader();
@@ -12,14 +10,13 @@ LegoFromFile = function () {
 
     fbxLoader.load('src/models/Lego2/Lego_26_06.fbx', function (object) {
 
-        console.log('LegoFromFile-fbxLoader');
         Lego_Figure.add(object);
 
-//        Ausgabe der Animationsnamen
+/*        Ausgabe der Animationsnamen
         for (var i = 0; i < object.animations.length; i++) {
             console.log(object.animations[i].name);
         }
-
+*/
         // Shadow für alle Meshes an
         object.traverse( function(child){
             console.log(child.name);
