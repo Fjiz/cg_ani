@@ -48,13 +48,10 @@ function main () {
     scene.add(person);
 
     var legoFigure = new LegoFromFile();
-    legoFigure.position.set(-85, 0, 20);
-<<<<<<< HEAD
-    physics.addBox(legoFigure, 3,75,103, 35, 0,72,0);
-=======
-    physics.addPersonBox(legoFigure, 3, 75, 144, 35, 28, 175, 0, 72);
+    legoFigure.position.set(-85, 79, 20);
+//    physics.addBox(legoFigure, 3,75,103, 35, 0,72,0);
+    physics.addPersonBox(legoFigure, 3, 75, 144, 35, 28, 102, 0,0);
 //    physics.addBox(legoFigure, 3,50,50, 50, 0,50,0);
->>>>>>> c0cb9228baae32f8b98a1cc0e1ef1ffb52e374c8
 //    physics.addSphere(legoFigure, 3, 28, 0, 175, 0)
     sound.addSound(legoFigure, "src/sound/files/legendTrack.mp3", 5, true);
     scene.add(legoFigure);
