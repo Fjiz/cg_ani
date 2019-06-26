@@ -35,20 +35,22 @@ function main () {
     scene = new THREE.Scene();
 
     physics = new Physics();
-    physics.initialize(0, -200, 0, 1/60, true);
+    physics.initialize(0, -200, 0, 1/120, true);
     physicsVisualDebugger = new THREE.CannonDebugRenderer(scene, physics.getWorld());
 
     sound = new Sound();
 
     var person = new Person();
-    person.position.set(85, 103, 20);
-    physics.addBox(person, 3,75, 146, 35, 0, -30,0);
+    person.position.set(85, 100, 20);
+    physics.addPersonBox(person, 3, 75, 144, 35, 28, 76, 0, -27);
+//    physics.addBox(person, 3,75, 146, 35, 0, -27,0);
 //    physics.addBox(person, 3, 50, 56, 35, 0, 60 , 0);
     scene.add(person);
 
     var legoFigure = new LegoFromFile();
     legoFigure.position.set(-85, 0, 20);
-    //physics.addBox(legoFigure, 3,75,103, 35, 0,72,0)
+    physics.addPersonBox(legoFigure, 3, 75, 144, 35, 28, 175, 0, 72);
+//    physics.addBox(legoFigure, 3,50,50, 50, 0,50,0);
 //    physics.addSphere(legoFigure, 3, 28, 0, 175, 0)
     scene.add(legoFigure);
 
@@ -90,7 +92,7 @@ function main () {
     };
 
     var orbitControls = new THREE.OrbitControls(camera);
-    orbitControls.target = new THREE.Vector3(0, 0, 0);
+    orbitControls.target = new THREE.Vector3(0, 50, 0);
     orbitControls.update();
 
 // ohne var für global Zugriff

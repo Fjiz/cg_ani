@@ -28,7 +28,7 @@ Physics = function () {
             floor.quaternion.setFromAxisAngle(new CANNON.Vec3(1, 0, 0), -Math.PI / 2);
             world.addBody(floor);
         }
-    }
+    };
 
     this.update = function (delta) {
 
@@ -66,7 +66,28 @@ Physics = function () {
         body.quaternion.copy(visualObject.quaternion);
         world.addBody(body);
         addPair(visualObject, body);
-    }
+    };
+
+    this.addPersonBox = function (visualObject, mass,
+                                  dimX, dimY, dimZ, radius, offsetHead,
+                                  offsetX = 0, offsetY = 0, offsetZ = 0,
+                                  eulerX = 0, eulerY = 0, eulerZ = 0){
+
+        var headOffset = new CANNON.Vec3(0, offsetHead, 0);
+        var dimension = new CANNON.Vec3(dimX / 2, dimY / 2, dimZ / 2);
+        var translation = new CANNON.Vec3(offsetX, offsetY, offsetZ);
+        var rotation = new CANNON.Quaternion();
+        rotation.setFromEuler(eulerX, eulerY, eulerZ, "XYZ");
+
+        var body = new CANNON.Body({mass:mass});
+        body.addShape(new CANNON.Box(dimension), translation, rotation);
+        body.addShape(new CANNON.Sphere(radius), headOffset);
+
+        body.position.copy(visualObject.position);
+        body.quaternion.copy(visualObject.quaternion);
+        world.addBody(body);
+        addPair(visualObject, body);
+    };
 
     this.addCylinder = function (visualObject, mass,
                                  upperRadius, lowerRadius, height, segments,

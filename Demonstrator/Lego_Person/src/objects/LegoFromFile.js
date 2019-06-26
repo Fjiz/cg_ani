@@ -2,7 +2,7 @@
 
 LegoFromFile = function () {
 
-    console.log('LegoFromFile')
+    console.log('LegoFromFile');
 
     var Lego_Figure = new THREE.Group();
 
@@ -10,7 +10,7 @@ LegoFromFile = function () {
 
     legoAnimationMixer = null;
 
-    fbxLoader.load('src/models/Lego2/Lego_v0.5.fbx', function (object) {
+    fbxLoader.load('src/models/Lego2/Lego_25_06.fbx', function (object) {
 
         console.log('LegoFromFile-fbxLoader');
         Lego_Figure.add(object);
@@ -26,7 +26,7 @@ LegoFromFile = function () {
             if(child.name === "Head" || child.name === "Corpus" || child.name === "leftArm" || child.name === "rightArm"){
                 child.castShadow = true;
             }
-        })
+        });
 
         // Animationen laden
         // ohne var für global Zugriff
@@ -41,7 +41,7 @@ LegoFromFile = function () {
 
     legoFBX = {
         head: false
-    }
+    };
 
     return Lego_Figure;
-}
+};

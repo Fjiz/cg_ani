@@ -9,7 +9,6 @@ Person = function () {
     var skinMaterial = new THREE.MeshPhongMaterial({color:0xCCBD22}, {specular:0xFFFF00});
     var topMaterial = new THREE.MeshLambertMaterial({color:0xFFFFFF});
     var bottomMaterial = new THREE.MeshLambertMaterial({color:0x696969});
-
     //Full HEAD
     var headGroup = new THREE.Group();
 
@@ -223,19 +222,21 @@ Person = function () {
     footR.castShadow =true;
     bottomGroup.add(footR);
 
-    //ADD HEAD, BODY (w/ ARMS) and BOTTOM to PERSON
-    personGroup.add(headGroup);
-    personGroup.add(bodyGroup);
-    personGroup.add(bottomGroup);
-
+    //Animation
     headAnimation = new AnimationU(head, AnimationType.ROTATION, AnimationAxis.Y)
     headAnimation.setAmount(1080 * DEG_TO_RAD);
     headAnimation.setSpeed(360 * DEG_TO_RAD);
     head.userData = headAnimation;
 
+    //ADD HEAD, BODY (w/ ARMS) and BOTTOM to PERSON
+    personGroup.add(bottomGroup);
+    personGroup.add(bodyGroup);
+    personGroup.add(headGroup);
+
+
     legoPrimitive = {
         head: false
-    }
+    };
 
     return personGroup;
 }
