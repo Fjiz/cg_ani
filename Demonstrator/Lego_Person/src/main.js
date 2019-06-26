@@ -43,20 +43,13 @@ function main () {
     var person = new Person();
     person.position.set(85, 100, 20);
     physics.addPersonBox(person, 3, 75, 144, 35, 28, 76, 0, -27);
-//    physics.addBox(person, 3,75, 146, 35, 0, -27,0);
-//    physics.addBox(person, 3, 50, 56, 35, 0, 60 , 0);
+    sound.addSound(person, "src/sound/files/legendTrack.mp3", 5, true);
     scene.add(person);
 
     var legoFigure = new LegoFromFile();
     legoFigure.position.set(-85, 0, 20);
-<<<<<<< HEAD
-    physics.addBox(legoFigure, 3,75,103, 35, 0,72,0);
-=======
     physics.addPersonBox(legoFigure, 3, 75, 144, 35, 28, 175, 0, 72);
-//    physics.addBox(legoFigure, 3,50,50, 50, 0,50,0);
->>>>>>> c0cb9228baae32f8b98a1cc0e1ef1ffb52e374c8
-//    physics.addSphere(legoFigure, 3, 28, 0, 175, 0)
-    sound.addSound(legoFigure, "src/sound/files/legendTrack.mp3", 5, true);
+    sound.addSound(legoFigure, "src/sound/files/legendTrackFBX.mp3", 5, true);
     scene.add(legoFigure);
 
     scene.add(new Floor(350, 350, 4));

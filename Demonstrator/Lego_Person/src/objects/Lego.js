@@ -17,7 +17,6 @@ Person = function () {
     var hair = new THREE.Mesh(hairGemoetry, skinMaterial);
     hair.position.set(0, 98, 0);
     hair.castShadow = true;
-    sound.addSound(hair, "src/sound/files/legendTrack.mp3", 5, true);
 
     //HAIR-Cut-Out
     var cutOutGeometry = new THREE.CylinderGeometry(9, 9, 10, 32, 1, false);
@@ -77,7 +76,7 @@ Person = function () {
 
     //BELT with a different Material to differ
     var beltGeometry = new THREE.BoxGeometry(73, 11, 39);
-    var beltMaterial = new THREE.MeshLambertMaterial({color:0x4F4F4F});
+    var beltMaterial = new THREE.MeshStandardMaterial({color:0x777777, metalness:0.2, roughness:0.2});
     var belt = new THREE.Mesh(beltGeometry, beltMaterial);
     belt.position.set(0, -25.5, 0);
     belt.castShadow =true;
