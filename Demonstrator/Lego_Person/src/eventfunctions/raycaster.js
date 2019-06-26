@@ -24,6 +24,8 @@ function executeRaycast(event) {
             if (!legoAnimationMixer.existingAction("HeadAction").isRunning()) {
                 legoAnimationMixer.existingAction("HeadAction").stop();
                 legoAnimationMixer.existingAction("HeadAction").play();
+                legoFBX.head = !legoFBX.head;
+                window.dispatchEvent(new Event("legoFBX"));
             }
         }
     }

@@ -48,8 +48,9 @@ function main () {
 
     var legoFigure = new LegoFromFile();
     legoFigure.position.set(-85, 0, 20);
-    //physics.addBox(legoFigure, 3,75,103, 35, 0,72,0)
+    physics.addBox(legoFigure, 3,75,103, 35, 0,72,0);
 //    physics.addSphere(legoFigure, 3, 28, 0, 175, 0)
+    sound.addSound(legoFigure, "src/sound/files/legendTrack.mp3", 5, true);
     scene.add(legoFigure);
 
     scene.add(new Floor(350, 350, 4));
@@ -132,6 +133,9 @@ function main () {
 
     window.addEventListener('legoPrimitive', setSoundLegend);
     window.dispatchEvent(new Event('legoPrimitive'));
+
+    window.addEventListener('legoFBX', setSoundLegend);
+    window.dispatchEvent(new Event('legoFBX'));
 }
 
 window.onload = main;
