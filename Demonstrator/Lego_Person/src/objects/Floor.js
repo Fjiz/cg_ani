@@ -18,11 +18,11 @@ Floor = function (dimX, dimY, segments) {
     normalMap.repeat.set(segments / 2, segments / 2);
     normalMap.wrapS = THREE.RepeatWrapping;
     normalMap.wrapT = THREE.RepeatWrapping;
-    floorMaterial.normalMap = normalMap
+    floorMaterial.normalMap = normalMap;
 
     var floor = new THREE.Mesh(floorGeometry, floorMaterial);
     floor.rotation.x = -90 * DEG_TO_RAD;
     floor.receiveShadow = true;
 
     return floor;
-}
+};
