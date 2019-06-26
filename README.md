@@ -4,11 +4,11 @@ We build a Lego figure out of native geometry, inspired by a Lego-fbx-Model.
 
 # Anforderungen "Zwillings-Demonstrator" 
 - [x] Struktur/Aufbau
-- [ ] Animation(en)
+- [x] Animation(en)
 - [ ] Material(ien)
 - [ ] Textur(en)
 - [ ] Physik
-- [ ] Sound(s)
+- [x] Sound(s)
 - [x] Schatten
 
 ## Getting Started
