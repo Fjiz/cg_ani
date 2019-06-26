@@ -35,7 +35,7 @@ Person = function () {
     var head = new THREE.Mesh(headGeometry, faceTexture);
     head.castShadow = true;
     head.position.set(0, 71.25, 0);
-    head.name = "headTEST";
+    head.name = "head_person";
     headGroup.add(head);
 
     //NECK
@@ -69,7 +69,10 @@ Person = function () {
     var bodyShirt = new THREE.MeshPhongMaterial({color:0xFFFFFF});
     bodyShirt.map = new THREE.TextureLoader().load('src/images/Bandit_Shirt.png');
     var materialArrayShirt = [bodyShirt, topMaterial];
-    var body = new THREE.Mesh(bodyGeometry, materialArrayShirt);
+    var shirtMaterial = new THREE.MeshPhongMaterial({color:0xFFFFFF});
+    shirtMaterial.map = new THREE.TextureLoader().load('src/images/Bandit_Shirt.png');
+    var materialArray = [topMaterial, topMaterial, topMaterial,topMaterial, shirtMaterial, topMaterial];
+    var body = new THREE.Mesh(bodyGeometry, materialArray);
     body.castShadow = true;
 //    body.receiveShadow = true;
     body.position.set(0, -20, -19.5);

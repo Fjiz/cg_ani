@@ -42,7 +42,7 @@ function main () {
 
     var person = new Person();
     person.position.set(85, 100, 20);
-    physics.addPersonBox(person, 3, 75, 144, 35, 28, 76, 0, -27);
+    physics.addPersonBox(person, 3, 75, 144, 35, 26, 76, 0, -27);
 //    physics.addBox(person, 3,75, 146, 35, 0, -27,0);
 //    physics.addBox(person, 3, 50, 56, 35, 0, 60 , 0);
     scene.add(person);
@@ -50,7 +50,7 @@ function main () {
     var legoFigure = new LegoFromFile();
     legoFigure.position.set(-85, 79, 20);
 //    physics.addBox(legoFigure, 3,75,103, 35, 0,72,0);
-    physics.addPersonBox(legoFigure, 3, 75, 144, 35, 28, 102, 0,0);
+    physics.addPersonBox(legoFigure, 3, 75, 144, 35, 26, 102, 0,0);
 //    physics.addBox(legoFigure, 3,50,50, 50, 0,50,0);
 //    physics.addSphere(legoFigure, 3, 28, 0, 175, 0)
     sound.addSound(legoFigure, "src/sound/files/legendTrack.mp3", 5, true);
@@ -75,11 +75,11 @@ function main () {
 
     gui.domElement.onmouseenter = function() {
         orbitControls.enabled = false;
-    }
+    };
 
     gui.domElement.onmouseleave = function() {
         orbitControls.enabled = true;
-    }
+    };
 
 // ohne var für global Zugriff
     

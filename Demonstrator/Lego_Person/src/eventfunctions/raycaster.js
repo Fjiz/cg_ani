@@ -13,7 +13,7 @@ function executeRaycast(event) {
         // hier können über die Property.name Dinge passieren -> Folien 5 Seite 11
         console.log(firstHit.name)
 
-        if (firstHit.name === "headTEST"){
+        if (firstHit.name === "head_person"){
             console.log("its moving");
             firstHit.userData.toggleAnimationEndPosition();
             legoPrimitive.head = !legoPrimitive.head;
