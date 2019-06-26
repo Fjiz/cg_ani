@@ -35,7 +35,7 @@ Person = function () {
     var head = new THREE.Mesh(headGeometry, faceTexture);
     head.castShadow = true;
     head.position.set(0, 71.25, 0);
-    head.name = "headTEST"
+    head.name = "headTEST";
     headGroup.add(head);
 
     //NECK
@@ -62,7 +62,7 @@ Person = function () {
         bevelEnabled: true,
         bevelSize: 1,
         bevelThickness: 2
-    }
+    };
 
     var bodyGeometry = new THREE.ExtrudeGeometry(bodyShape, bodyExtrudeSetting);
 
@@ -223,7 +223,7 @@ Person = function () {
     bottomGroup.add(footR);
 
     //Animation
-    headAnimation = new AnimationU(head, AnimationType.ROTATION, AnimationAxis.Y)
+    headAnimation = new AnimationU(head, AnimationType.ROTATION, AnimationAxis.Y);
     headAnimation.setAmount(1080 * DEG_TO_RAD);
     headAnimation.setSpeed(360 * DEG_TO_RAD);
     head.userData = headAnimation;
@@ -239,4 +239,4 @@ Person = function () {
     };
 
     return personGroup;
-}
+};

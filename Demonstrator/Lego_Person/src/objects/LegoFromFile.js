@@ -22,7 +22,7 @@ LegoFromFile = function () {
 
         // Shadow für alle Meshes an
         object.traverse( function(child){
-            console.log(child.name)
+            console.log(child.name);
             if(child.name === "Head" || child.name === "Corpus" || child.name === "leftArm" || child.name === "rightArm"){
                 child.castShadow = true;
             }
@@ -32,8 +32,8 @@ LegoFromFile = function () {
         // ohne var für global Zugriff
         legoAnimationMixer = new THREE.AnimationMixer(object);
 
-        for (var i = 0; i < object.animations.length; i++) {
-            var action = legoAnimationMixer.clipAction(object.animations[i]);
+        for (var j = 0; j < object.animations.length; j++) {
+            var action = legoAnimationMixer.clipAction(object.animations[j]);
             action.clampWhenFinished = true;
             action.setLoop(THREE.LoopOnce);
         }

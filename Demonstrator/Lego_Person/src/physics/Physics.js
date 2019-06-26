@@ -43,11 +43,11 @@ Physics = function () {
             visualObjects[i].position.copy(physicalBodies[i].position);
             visualObjects[i].quaternion.copy(physicalBodies[i].quaternion);
         }
-    }
+    };
 
     this.getWorld = function () {
         return world;
-    }
+    };
 
     this.addBox = function (visualObject, mass,
                             dimX, dimY, dimZ,
@@ -105,7 +105,7 @@ Physics = function () {
         body.quaternion.copy(visualObject.quaternion);
         world.addBody(body);
         addPair(visualObject, body);
-    }
+    };
 
     this.addSphereWithVelocity = function (visualObject, mass, radius, velocityVector) {
         var body = new CANNON.Body({
@@ -118,4 +118,4 @@ Physics = function () {
         world.addBody(body);
         addPair(visualObject, body);
     }
-}
+};
