@@ -42,12 +42,20 @@ function main () {
 
     var person = new Person();
     person.position.set(85, 100, 20);
+<<<<<<< HEAD
     physics.addPersonBox(person, 3, 75, 144, 35, 26, 76, 0, -27);
 //    physics.addBox(person, 3,75, 146, 35, 0, -27,0);
 //    physics.addBox(person, 3, 50, 56, 35, 0, 60 , 0);
+=======
+    physics.addPersonBox(person, 3, 75, 144, 35, 28, 76, 0, -27);
+    sound.addSound(person, "src/sound/files/legendTrack.mp3", 5, true);
+>>>>>>> 3956b56b253ea724c7dcb10f40fb3503942834a4
     scene.add(person);
 
     var legoFigure = new LegoFromFile();
+    legoFigure.position.set(-85, 0, 20);
+    physics.addPersonBox(legoFigure, 3, 75, 144, 35, 28, 175, 0, 72);
+    sound.addSound(legoFigure, "src/sound/files/legendTrackFBX.mp3", 5, true);
     legoFigure.position.set(-85, 79, 20);
 //    physics.addBox(legoFigure, 3,75,103, 35, 0,72,0);
     physics.addPersonBox(legoFigure, 3, 75, 144, 35, 26, 102, 0,0);
