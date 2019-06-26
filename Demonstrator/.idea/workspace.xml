@@ -2,41 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0ee489b-71b5-4c97-a2c9-2cc16d7dd84e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/images/Blocks_001_COLOR_B.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/images/Blocks_001_COLOR_D.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/images/Blocks_001_DISP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/images/Blocks_A.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/images/Blocks_A2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/images/Blocks_NORM.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/images/Blocks_OCC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/images/Blocks_ROUGH.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/images/Blocks_green.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Bowl/Bowl.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego/Bandit Texture.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego/Bandit Texture_Low Poly.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego/Bandit_Colour_Map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego/Bandit_Specular_Map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego/LEGO Minifigure_Export for FBX (LOW POLY).fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego/LEGO_Minifigure.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego/Lego Texture.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego1/Bandit Texture_Low Poly.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego1/Bandit_Low Poly_Specular_Map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego1/Lego_v0.1.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego1/Lego_v0.2.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego2/Bandit Texture_Low Poly.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego2/Bandit_Low Poly_Specular_Map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego2/Lego_25_06.blend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego2/Lego_25_06.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego2/Lego_26_06.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego2/Lego_v0.3.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego2/Lego_v0.4.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego2/Lego_v0.5.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego2/Lego_v0.6.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Lego2/Lego_v0.7.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Radio/Radio.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Radio/Radio_COL_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/models/Radio/Radio_NOR_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lego_Person/src/objects/BowlFromFile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lego_Person/src/eventfunctions/raycaster.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lego_Person/src/eventfunctions/raycaster.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lego_Person/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lego_Person/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lego_Person/src/objects/LegoFromFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lego_Person/src/objects/LegoFromFile.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -62,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lego_Person/src/objects/LegoFromFile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            <state relative-caret-position="258">
+              <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -71,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lego_Person/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-31">
+            <state relative-caret-position="1887">
               <caret line="111" column="2" selection-start-line="111" selection-start-column="2" selection-end-line="111" selection-end-column="2" />
             </state>
           </provider>
@@ -107,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lego_Person/src/eventfunctions/executeKeyAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="-12">
+              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -134,9 +101,9 @@
         <option value="$PROJECT_DIR$/Lego_Person/src/eventfunctions/executeKeyAction.js" />
         <option value="$PROJECT_DIR$/Lego_Person/src/objects/Floor.js" />
         <option value="$PROJECT_DIR$/Lego_Person/src/objects/Lego.js" />
+        <option value="$PROJECT_DIR$/Lego_Person/src/main.js" />
         <option value="$PROJECT_DIR$/Lego_Person/src/physics/Physics.js" />
         <option value="$PROJECT_DIR$/Lego_Person/src/eventfunctions/raycaster.js" />
-        <option value="$PROJECT_DIR$/Lego_Person/src/main.js" />
         <option value="$PROJECT_DIR$/Lego_Person/src/objects/LegoFromFile.js" />
       </list>
     </option>
@@ -182,6 +149,13 @@
               <item name="Demonstrator" type="462c0819:PsiDirectoryNode" />
               <item name="Lego_Person" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Demonstrator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Demonstrator" type="462c0819:PsiDirectoryNode" />
+              <item name="Lego_Person" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="eventfunctions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -264,24 +238,24 @@
       <workItem from="1561288671163" duration="18219000" />
       <workItem from="1561367235022" duration="6418000" />
       <workItem from="1561551831932" duration="9064000" />
-      <workItem from="1561564901155" duration="3163000" />
+      <workItem from="1561564901155" duration="1012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76637000" />
+    <option name="totallyTimeSpent" value="74486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32843137" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -474,10 +448,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Lego_Person/src/objects/Floor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lego_Person/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1887">
+          <caret line="111" column="2" selection-start-line="111" selection-start-column="2" selection-end-line="111" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Lego_Person/src/physics/Physics.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1819">
           <caret line="107" column="6" selection-start-line="107" selection-start-column="6" selection-end-line="107" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lego_Person/src/objects/Lego.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -490,42 +485,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lego_Person/src/eventfunctions/executeKeyAction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bochmann_Clauss/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bochmann_Clauss/Bochmann_Clauss/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lego_Person/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="111" column="2" selection-start-line="111" selection-start-column="2" selection-end-line="111" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lego_Person/src/objects/Lego.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lego_Person/src/objects/Floor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+        <state relative-caret-position="-12">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lego_Person/src/objects/LegoFromFile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="258">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
         </state>
       </provider>
     </entry>
