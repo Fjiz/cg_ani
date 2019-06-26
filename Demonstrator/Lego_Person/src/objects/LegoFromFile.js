@@ -10,7 +10,7 @@ LegoFromFile = function () {
 
     legoAnimationMixer = null;
 
-    fbxLoader.load('src/models/Lego2/Lego_25_06.fbx', function (object) {
+    fbxLoader.load('src/models/Lego2/Lego_26_06.fbx', function (object) {
 
         console.log('LegoFromFile-fbxLoader');
         Lego_Figure.add(object);

@@ -50,6 +50,12 @@ function main () {
     legoFigure.position.set(-85, 0, 20);
     physics.addPersonBox(legoFigure, 3, 75, 144, 35, 28, 175, 0, 72);
     sound.addSound(legoFigure, "src/sound/files/legendTrackFBX.mp3", 5, true);
+    legoFigure.position.set(-85, 79, 20);
+//    physics.addBox(legoFigure, 3,75,103, 35, 0,72,0);
+    physics.addPersonBox(legoFigure, 3, 75, 144, 35, 28, 102, 0,0);
+//    physics.addBox(legoFigure, 3,50,50, 50, 0,50,0);
+//    physics.addSphere(legoFigure, 3, 28, 0, 175, 0)
+    sound.addSound(legoFigure, "src/sound/files/legendTrack.mp3", 5, true);
     scene.add(legoFigure);
 
     scene.add(new Floor(350, 350, 4));
